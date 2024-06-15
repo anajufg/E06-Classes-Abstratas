@@ -7,7 +7,7 @@ abstract class Conta {
 
     private double saldo;
 
-    private double limite;
+    protected double limite;
 
     private Operacao[] operacoes;
 
@@ -139,14 +139,5 @@ abstract class Conta {
     }
 
     // Set limite
-    public boolean setLimite(double limite) {
-        if (limite < 0) {
-            this.limite = 0;
-            System.out.println("<Limite inválido>");
-            return false;
-        } else {
-            this.limite = limite;
-            return true;
-        }
-    }
+    public abstract boolean setLimite(double limite);
 }

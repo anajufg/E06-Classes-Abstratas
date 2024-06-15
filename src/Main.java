@@ -13,8 +13,8 @@ public class Main {
         Cliente lojinha = new PessoaJuridica("Loja R$1,99", "Av. Afonso Pena, 3000",
                 new Date(), "000.00000.0000/0001", 25, "Comércio");
 
-        Conta conta1 = new Conta(1234, joao, 0, 1500);
-        Conta conta2 = new Conta(1234, lojinha, 10000, 1500);
+        Conta conta1 = new ContaPoupanca(1234, joao, 0, 1500);
+        Conta conta2 = new ContaCorrente(1234, lojinha, 10000, 1500);
 
 
         conta1.depositar(3000);
@@ -29,7 +29,8 @@ public class Main {
         System.out.println(conta1.toString());
         conta1.imprimirExtrato();
 
-        //System.out.println(conta1.equals(conta2));
+        conta1.setLimite(1001);
+        conta2.setLimite(-100);
 
     }
 }
